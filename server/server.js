@@ -1,5 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const getRandomNumber = require( './modules/random.js' );
 const app = express();
 const PORT = 5000;
 
@@ -10,6 +11,15 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('server/public'));
 
 // GET & POST Routes go here
+let guesses = [];
+
+app.get( '/inventory', function( req, res ){
+  console.log( 'in get inventory');
+  res.send( inventoryList );
+});
+
+// testing for random number function 
+console.log(getRandomNumber);
 
 
 app.listen(PORT, () => {
