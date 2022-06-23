@@ -12,13 +12,29 @@
 </head>
 <body>
     <h1>YOUR GAME HERE!</h1>
-    <h2>Place Your Guesses Here!</h2>
-    <main id = "inputContainer">
-      <input placeholder="Player 1" id="pOne"/>
-      <input placeholder="Player 2" id="pTwo"/>
-      <input placeholder="Player 3" id="pThree"/>
-      <input placeholder="Player 4" id="pFour"/>
+    <h2 id class="roundTitle">Round:<span id ="roundCounter">1</span></h2>
+    <h3>Place Your Guesses Here!</h3>
+    <main id = "container">
+      <!-- <span id = "inputContainer"> -->
+      <input type="number" placeholder="Player 1" id="pOne"/>
+      <input type="number" placeholder="Player 2" id="pTwo"/>
+      <input type="number" placeholder="Player 3" id="pThree"/>
+      <input type="number" placeholder="Player 4" id="pFour"/>
+      <!-- </span> -->
       <button id="submit">Submit Guesses</button>
     </main>
+    <div id="guessOut">
+      <table>
+        <thead>
+          <tr class="tableHeader">
+            <th>Player One</th>
+            <th>Player Two</th>
+            <th>Player Three</th>
+            <th>Player Four</th>
+          </tr>
+        </thead>
+        <tbody id="playerTable"></tbody>
+      </table>
+    </div>
 </body>
 </html>
