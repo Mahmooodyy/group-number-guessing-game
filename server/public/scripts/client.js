@@ -22,6 +22,9 @@ function getArray(){
 
 
 function handleSubmit(){
+    //increment round counter
+    incrementRoundCounter();
+    let num = Math.floor(Math.random() * 25) + 1;
   // new object is created
   const newGuess = {
     p1: $('#pOne').val(),
@@ -54,40 +57,13 @@ roundCounterTally.append(roundCounter);
 console.log('end counter')
 }
 
-  incrementRoundCounter();
-  
-//   guessArray.push(
-//     {
-//       name: 'playerOne',
-//       guess: $('#pOne').val()
-//     },
-//     {
-//       name: 'playerTwo',
-//       guess: $('#pTwo').val()
-//     },
-//     {
-//       name: 'playerThree',
-//       guess: $('#pThree').val()
-//     },
-//     {
-//       name: 'playerFour',
-//       guess: $('#pFour').val()
-//     }
-//   )
-//   //clear inputs
-//   // $('#pOne').val('')
-//   // $('#pTwo').val('')
-//   // $('#pThree').val('')
-//   // $('#pFour').val('')
-// };
-
 
 function render(guessArray) {
-  //empty
-  $('#playerTable').empty();
-  //append
+ //empty
+  $('#playerTable').empty()
+   //append
   for (let i = 0; i<guessArray.length; i++){
-    $('#playerTable').empty().append(
+    $('#playerTable').append(
       `<tr>
         <td class ='table-row'>${guessArray[i].p1}</td>
         <td class ='table-row'>${guessArray[i].p2}</td>
@@ -96,5 +72,14 @@ function render(guessArray) {
       </tr>`
     )
   }
+
 };
 
+// //start of congratsConfirm-confirmation pop-up window
+// function congratsConfirm() {
+//   if (confirm(`<p>Congratulations!!! You Won!</p> <p>Do you want to play again?</p>`) == true) {
+//     return true;
+//   }
+//   return false;
+// }
+// //end confirmDelete

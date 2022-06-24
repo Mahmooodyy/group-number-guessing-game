@@ -17,13 +17,13 @@
   box-shadow: 0 6px 20px -5px  #3ead49;
 }
 
-/* #inputContainer{
+#inputContainer{
     border: 2px solid rgb(39, 90, 39);
     border-radius: 8px;
     width: 100px;
-    height: 30px;
+    height: 40px;
     text-align: center;
-  } */
+  }
 
   table, th, td {
     border: 1px solid black;
@@ -34,3 +34,16 @@
     margin-right: auto;
 
   }
+body{
+  text-align: center;
+  background-color: #EEF3E2
+}
+
+.tableHeader{
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}

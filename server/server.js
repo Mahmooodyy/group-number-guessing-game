@@ -14,24 +14,33 @@ app.use(express.static('server/public'));
 
 // GET & POST Routes go here
 
+let num = Math.floor(Math.random() * 25) + 1;
 app.get( '/guesses', function( req, res ){
-  console.log( 'in get inventory');
+  console.log( 'in get guesses');
+
+  console.log(num);
   res.send( guessArray );
-});
+
+  // num;
+  // console.log(num);
+})
 
 app.post( '/guesses', ( req, res) => {
   console.log( 'POST CREATED', req.body );
   guessArray.push( req.body );
-  // We still need to create the radom # and compare it
-  
-    res.sendStatus( 201 );
+  if (guessArray[0].p1 > num) {
+    console.log('sheeee');
+  }
+//   function compareNum(guessArray, num){
+//     console.log( guessArray, num);
+// //   if (guessArray.p1 > num) {
+// //     console.log('Too High!')
+// //   }return 'It might be working'
+//  }
+          res.sendStatus( 201 );
   })
   
-
-
-// testing for random number function 
 // console.log(checkForRandom); 
-
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
 })
